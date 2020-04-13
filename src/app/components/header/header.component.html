@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="home" routerLinkActive="active"
+    >MySQL-BLOG</a
+  >
+  <!-- <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExample09"
+    aria-controls="navbarsExample09"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <div class="collapse navbar-collapse" id="navbarsExample09">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="loginButton"
+          routerLink="home"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="logoutButton"
+          routerLink="home"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="logoutButton"
+          routerLink="dashboard"
+          routerLinkActive="active"
+          >Dashboard</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="logoutButton"
+          routerLink="register"
+          routerLinkActive="active"
+          >Resister</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="loginButton"
+          routerLink="login"
+          routerLinkActive="active"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <button
+          type="button"
+          *ngIf="logoutButton"
+          class="btn btn-danger btn-block"
+          (click)="logout()"
+        >
+          logout
+        </button>
+      </li>
+    </ul>
+  </div>
+  {{currentUser}}
+</nav>
