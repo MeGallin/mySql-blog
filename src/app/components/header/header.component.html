@@ -1,77 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-  <a class="navbar-brand" routerLink="home" routerLinkActive="active"
-    >MySQL-BLOG</a
-  >
-  <!-- <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarsExample09"
-    aria-controls="navbarsExample09"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
+<nav class="header">
+  <a class="logo" routerLink="home">MySQL-BLOG</a>
 
-  <div class="collapse navbar-collapse" id="navbarsExample09">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          *ngIf="loginButton"
-          routerLink="home"
-          routerLinkActive="active"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          *ngIf="logoutButton"
-          routerLink="home"
-          routerLinkActive="active"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          *ngIf="logoutButton"
-          routerLink="dashboard"
-          routerLinkActive="active"
-          >Dashboard</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          *ngIf="logoutButton"
-          routerLink="register"
-          routerLinkActive="active"
-          >Resister</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          *ngIf="loginButton"
-          routerLink="login"
-          routerLinkActive="active"
-          >Login</a
-        >
-      </li>
-      <li class="nav-item">
-        <button
-          type="button"
-          *ngIf="logoutButton"
-          class="btn btn-danger btn-block"
-          (click)="logout()"
-        >
-          logout
-        </button>
-      </li>
-    </ul>
+  <div class="header-right">
+    <a *ngIf="loginButton" routerLink="home" routerLinkActive="active">Home</a>
+    <a *ngIf="logoutButton" routerLink="home" routerLinkActive="active">Home</a>
+    <a *ngIf="logoutButton" routerLink="dashboard" routerLinkActive="active"
+      >Dashboard</a
+    >
+    <a *ngIf="logoutButton" routerLink="register" routerLinkActive="active"
+      >Resister</a
+    >
+    <a *ngIf="loginButton" routerLink="login" routerLinkActive="active"
+      >Login</a
+    >
   </div>
-  {{currentUser}}
 </nav>
+<div class="header-wrapper">
+  <div class="small-text">
+    <span *ngIf="currentUser">Current User: {{ currentUser }}</span>
+    <div>
+      <app-date-time></app-date-time>
+    </div>
+  </div>
+  <button
+    type="button"
+    *ngIf="logoutButton"
+    class="primary-colour"
+    (click)="logout()"
+  >
+    logout
+  </button>
+</div>
+<hr />

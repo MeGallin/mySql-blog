@@ -2,7 +2,7 @@
 include_once('config.php');
  
   //echo "Connected successfully";
-$sql = "SELECT * FROM messages";
+$sql = "SELECT * FROM messages order by Id desc";
 $result = mysqli_query($conn,$sql); 
 $myArray = array();
 if ($result->num_rows > 0) {

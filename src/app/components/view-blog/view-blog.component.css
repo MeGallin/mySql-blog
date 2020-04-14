@@ -1,0 +1,19 @@
+.blog-view-wrapper {
+  overflow-y: auto;
+  height: calc(100vh - 18vh);
+}
+.inner-blog-view-wrapper {
+  border: rgba(255, 255, 255, 1) 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0.5em;
+  background-color: rgba(240, 240, 240, 1);
+  margin-bottom: 0.5em;
+}
+
+.inner-blog-view-wrapper div {
+  padding: 0.5em;
+  text-align: left;
+}

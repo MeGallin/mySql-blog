@@ -1,4 +1,5 @@
 <form [formGroup]="blogFrom" (ngSubmit)="sendMessage(blogFrom.value)">
+  <h3>Submit form</h3>
   <div class="hidden">
     <input type="text" formControlName="hiddenName" placeholder="Hidden Name" />
   </div>
@@ -37,16 +38,8 @@
       required
     ></textarea>
   </div>
-  <button
-    class="btn btn-outline-primary"
-    color="primary"
-    type="submit"
-    [disabled]="blogFrom.invalid"
-  >
+  <p></p>
+  <button class="primary-colour" type="submit" [disabled]="blogFrom.invalid">
     Send Message
   </button>
 </form>
-
-<ng-template #loading>
-  Loading User...
-</ng-template>

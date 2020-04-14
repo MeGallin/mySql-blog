@@ -1,18 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RoutingModule } from './routing.module';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { RoutingModule } from "./routing.module";
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ViewBlogComponent } from './components/view-blog/view-blog.component';
-import { PostBlogComponent } from './components/admin/post-blog/post-blog.component';
-import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
-import { LoginComponent } from './components/admin/login/login.component';
-import { RegistrationComponent } from './components/admin/registration/registration.component';
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./components/home/home.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { ViewBlogComponent } from "./components/view-blog/view-blog.component";
+import { PostBlogComponent } from "./components/admin/post-blog/post-blog.component";
+import { DashboardComponent } from "./components/admin/dashboard/dashboard.component";
+import { LoginComponent } from "./components/admin/login/login.component";
+import { RegistrationComponent } from "./components/admin/registration/registration.component";
+import { DateTimeComponent } from "./components/shared/date-time/date-time.component";
+import { MomentPipe } from "./pipes/moment.pipe";
 
 @NgModule({
   declarations: [
@@ -24,16 +26,18 @@ import { RegistrationComponent } from './components/admin/registration/registrat
     PostBlogComponent,
     DashboardComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    DateTimeComponent,
+    MomentPipe,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

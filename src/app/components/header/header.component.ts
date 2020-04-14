@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../services/http.service';
+import { Component, OnInit } from "@angular/core";
+import { HttpService } from "../../services/http.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit {
   public currentUser;
@@ -14,19 +14,19 @@ export class HeaderComponent implements OnInit {
   constructor(private _Http: HttpService) {}
 
   ngOnInit(): void {
-    this._Http.getLoggedInName.subscribe(name => {
+    this._Http.getLoggedInName.subscribe((name) => {
       this.changeName(name);
     });
 
     if (this._Http.isLoggedIn()) {
-      console.log('loggedin');
+      console.log("loggedin");
       this.loginButton = false;
       this.logoutButton = true;
     } else {
       this.loginButton = true;
       this.logoutButton = false;
     }
-    this.currentUser = localStorage.getItem('token');
+    this.currentUser = localStorage.getItem("token");
   }
 
   private changeName(name: boolean): void {
@@ -37,5 +37,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     this._Http.deleteToken();
     window.location.href = window.location.href;
+    console.log(window.location.href);
   }
 }

@@ -1,24 +1,47 @@
-<h3>Submit form</h3>
 <app-post-blog></app-post-blog>
 <hr />
 <div *ngIf="showForm">
   <div *ngFor="let item of formArray">
-    <h1>Edit form to follow</h1>
-    <form #myForm>
-      <input type="text" name="id" value="{{item.id}}" hidden />
-      <input type="text" name="name" value="{{item.name}}" />
-      <input type="text" name="heading" value="{{item.heading}}" />
-      <textarea type="text" name="message" value="{{item.message}}"></textarea>
-      <button (click)="handleEdit(myForm)">UPDATE</button>
+    <form #editForm class="edit-form">
+      <h1>Edit form</h1>
+      <input type="text" name="id" value="{{ item.id }}" hidden />
+      <label>Name</label>
+      <input
+        class="form-control"
+        type="text"
+        name="name"
+        value="{{ item.name }}"
+      />
+      <label>Heading</label>
+      <input
+        class="form-control"
+        type="text"
+        name="heading"
+        value="{{ item.heading }}"
+      />
+      <label>Message</label>
+      <textarea
+        class="form-control"
+        type="text"
+        name="message"
+        value="{{ item.message }}"
+      ></textarea>
+      <p></p>
+      <button (click)="handleEdit(editForm)">UPDATE</button>
     </form>
   </div>
 </div>
 
-<div *ngFor="let item of blog.reverse()">
-  <h1>{{item.heading}}</h1>
-  <p>[{{item.id}}] {{item.message}}</p>
-  <p><small>{{item.name}}</small> {{item.posted}}</p>
-  <button (click)="deleteBlog(item.id)">Delete</button>
-  <button (click)="openEditForm(item)">Edit</button>
+<div *ngFor="let item of blog">
+  <h1>{{ item.heading }}</h1>
+  <p>[{{ item.id }}] {{ item.message }}</p>
+  <p>
+    <small>{{ item.name }}</small> {{ item.posted }}
+  </p>
+  <div class="space-between">
+    <button (click)="deleteBlog(item.id)">Delete</button>
+    <button (click)="openEditForm(item)">Edit</button>
+  </div>
+
   <hr />
 </div>

@@ -1,5 +1,14 @@
-<div *ngFor="let blog of blogPosts.reverse()">
-  <h3>{{blog.heading}}</h3>
-  <div>{{blog.message}}</div>
-  <hr />
+<div class="blog-view-wrapper">
+  <div *ngFor="let blog of blogPosts; let i = index">
+    <div class="inner-blog-view-wrapper">
+      <div>
+        <h3>{{ blog.heading }}</h3>
+        {{ blog.message }}
+      </div>
+      <div class="small-text">
+        <div>Post by: {{ blog.name }}</div>
+        <div>{{ blog.posted | momentPipe: "MMMM Do YYYY, h:mm:ss a" }}</div>
+      </div>
+    </div>
+  </div>
 </div>
